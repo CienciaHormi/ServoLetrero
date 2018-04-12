@@ -3,9 +3,15 @@
   https://creativecommons.org/licenses/by/4.0/
 */
 
-//#define Debug_Servos
-//#define Debug_Offset
-#define Accion
+//#define Debug_Servos //Ajuste de la señal PWM de los servos
+//#define Debug_Offset //Ajuste del offset de los servos
+#define Accion //Accion de programa
+
+/*   NUMERACION LOCAL DE LOS SERVOMOTORES (DE CADA PANEL)        
+             __0
+         5/ __6 /1
+        4/ __3 /2
+*/
 
 boolean Inv[] = {0, 0, 0, 1, 1, 1, 0}; //Servomotores que tienen el ángulo inveritdo (paneles 0, 1, 2)
 boolean Inv2[] = {0, 1, 0, 1, 0, 1, 0}; //Servomotores que tienen el ángulo inveritdo (paneles 3, 4, 5)
@@ -154,9 +160,9 @@ void loop() {
   Clear(0);
   Serial.println("null");
   delay(5000);
-  //  All(0);
-  //  Serial.println("full");
-  //  delay(5000);
+  All(0);
+  Serial.println("full");
+  delay(5000);
 #endif
 
 #ifdef Debug_Servos
